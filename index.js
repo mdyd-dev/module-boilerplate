@@ -40,7 +40,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath('.'),
-      this.destinationPath(path.join(process.cwd())),
+      this.destinationPath('../../..'),
       this.props,
       {}, // do not forget to pass this empty object if you want to pass globOptions.
       {
@@ -49,15 +49,7 @@ module.exports = class extends Generator {
     );
   }
 
-  install() {
-    // Example of installing dependencies saved in module package.json file (in this case not needed, ergo, commented)
-    /*
-      process.chdir(`${this.contextRoot}/${this.props.projectDir}`);
-      this.npmInstall();
-    */
-  }
-
   end() {
-    console.log(chalk.green('MPP :: Boilerplate :: Welcome to Dunder Mifflin'));
+    console.log(chalk.green('Boilerplate :: Dunder Mifflin, this is Pam'));
   }
 };
